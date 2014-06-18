@@ -23,5 +23,12 @@ describe Grader do
 
       expect(Grader.new(input).find_in_decline).to eq expected
     end
+
+    it 'returns in decline even if one grade goes up' do
+      input = [10, 9, 12, 8, 7]
+      expected = "in decline"
+
+      expect(Grader.new(input).find_in_decline).to eq expected
+    end
   end
 end
