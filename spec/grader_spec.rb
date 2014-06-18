@@ -15,4 +15,13 @@ describe Grader do
 
     expect(Grader.new(input).process).to eq expected
   end
+
+  describe 'finding students in decline' do
+    it 'determines whether a student is in decline based on whether they have 3 grades lower than previous grades' do
+      input = [10, 9, 8, 7]
+      expected = "in decline"
+
+      expect(Grader.new(input).find_in_decline).to eq expected
+    end
+  end
 end
