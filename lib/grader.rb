@@ -28,8 +28,10 @@ class Grader
   def find_in_decline
     processed_grades = self.process
     num_of_down = processed_grades.collect {|x| x = :down}
-    if num_of_down.length >= 3
+    if num_of_down.length >= 3 and processed_grades.last != :up
       "in decline"
+    else
+      "not in decline"
     end
   end
 end
