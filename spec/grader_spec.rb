@@ -37,5 +37,12 @@ describe Grader do
 
       expect(Grader.new(input).find_in_decline).to eq expected
     end
+
+    it 'returns not in decline if there were only two downs' do
+      input = [10, 9, 8]
+      expected = "not in decline"
+
+      expect(Grader.new(input).find_in_decline).to eq expected
+    end
   end
 end
