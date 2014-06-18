@@ -44,5 +44,12 @@ describe Grader do
 
       expect(Grader.new(input).find_in_decline).to eq expected
     end
+
+    it 'handles a much longer array that should return in decline' do
+      input = [10, 10, 10, 9, 9, 8, 8, 8, 8, 7]
+      expected = "in decline"
+
+      expect(Grader.new(input).find_in_decline).to eq expected
+    end
   end
 end
